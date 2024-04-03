@@ -479,7 +479,10 @@ while not game_over:
                         color_winning_pieces(board, PLAYER_PIECE)
                         pygame.mixer.music.load('winSFX.mp3')
                         pygame.mixer.music.play(-1)  # Play the music indefinitely
+
                         label = font.render("You Win!!", True, RED)
+                        if(ai_vs_ai):
+                             label = font.render("AI-1 Wins!!", True, RED)
                         label_rect = label.get_rect()
 
                         # Set the center of the rectangle to the center of the screen
@@ -508,6 +511,8 @@ while not game_over:
                     pygame.mixer.music.load('loseSFX.mp3')
                     pygame.mixer.music.play(-1)  # Play the music indefinitely
                     label = font.render("You Lose!!", True, YELLOW)
+                    if(ai_vs_ai):
+                            label = font.render("AI-2 Wins!!", True, YELLOW)
                     label_rect = label.get_rect()
 
                     # Set the center of the rectangle to the center of the screen
